@@ -1,0 +1,117 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+
+      <div class="col-lg-12" >
+        <div class="widget style1 navy-bg">
+          <div class="row" >
+            <div class="col-xs-4">
+              <i class="fa fa-cloud fa-5x"></i>
+            </div>
+            <h4 class="font-bold">{{weather.location_type}}</h4>
+            <h4 class="font-bold">{{weather.title}}</h4>
+            <h4 class="font-bold">{{weather.timezone}}</h4>
+
+            <!--<h2 class="font-bold">{{weather.consolidated_weather[0].weather_state_name}}</h2>-->
+            <!--<div class="col-xs-8 text-right" *ngFor='let subweather of weather.consolidated_weather;'>-->
+              <!--<span> {{ subweather.weather_state_name}} </span>-->
+            <!--<h2 class="font-bold">{{subweather.weather_state_name}}</h2>-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>Sun Rise : {{ weather.sun_rise}} </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>Sun Set : {{ weather.sun_set}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>Time-Zone : {{ weather.timezone_name}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Date</h5>
+            </div>
+          </div>
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Abbr</h5>
+            </div>
+          </div>
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Weather State</h5>
+            </div>
+          </div>
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Min.Temp</h5>
+            </div>
+          </div>
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Max.Temp</h5>
+            </div>
+          </div>
+          <div class="col-xs-2" >
+            <div class="ibox-title">
+              <h5>Wind Speed</h5>
+            </div>
+          </div>
+          <!--<div class="col-xs-2" >-->
+            <!--<div class="ibox-title">-->
+              <!--<h5>Visibility</h5>-->
+            <!--</div>-->
+          <!--</div>-->
+          <div class="ibox-content" >
+
+            <div class="row" *ngFor='let subweather of weather.consolidated_weather;'>
+
+              <div class="col-xs-2" >
+                <h4>{{ subweather.applicable_date}}</h4>
+              </div>
+              <div class="col-xs-2" >
+                <img src="https://www.metaweather.com/static/img/weather/ico/{{ subweather.weather_state_abbr}}.ico">
+              </div>
+              <div class="col-xs-2" >
+                <h4>{{ subweather.weather_state_name}}</h4>
+              </div>
+
+              <div class="col-xs-2">
+                <h4>{{ subweather.min_temp}}</h4>
+              </div>
+              <div class="col-xs-2" >
+                <h4>{{ subweather.max_temp}}</h4>
+              </div>
+              <div class="col-xs-2" >
+                <h4>{{ subweather.wind_speed}}</h4>
+              </div>
+              <!--<div class="col-xs-2" >-->
+                <!--<h4>{{ subweather.visibility}}</h4>-->
+              <!--</div>-->
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+  </div>
+</div>
